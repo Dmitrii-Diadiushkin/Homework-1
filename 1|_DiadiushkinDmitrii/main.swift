@@ -26,18 +26,18 @@ func Enter_Int(coef:String) -> Double {
 
 func equation() {
     print("Добро пожаловать в программу, решающую квадратное уравнение вида ax2+bx+c=0")
-    let A = Enter_Int(coef: "A")
-    let B = Enter_Int(coef: "B")
-    let C = Enter_Int(coef: "C")
+    let A:Double? = Enter_Int(coef: "A")
+    let B:Double? = Enter_Int(coef: "B")
+    let C:Double? = Enter_Int(coef: "C")
     
-    let D:Double = B*B - 4*A*C
+    let D:Double = B!*B! - 4*A!*C!
     
     if D > 0 {
-        let x1 = (-B + sqrt(D))/A*A
-        let x2 = (-B - sqrt(D))/A*A
+        let x1 = (-B! + sqrt(D))/(2*A!)
+        let x2 = (-B! - sqrt(D))/(2*A!)
         print("Корни уравнения: \(x1) и \(x2)")
     } else if D == 0{
-        let x = (-B)/A*A
+        let x = (-B!)/(2*A!)
         print("Корень уравнения: \(x)")
     }else if D < 0{
         print("Корней нет.")
